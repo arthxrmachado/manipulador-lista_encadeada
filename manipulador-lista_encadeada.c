@@ -1,8 +1,8 @@
-//importaÁ„o de bibliotecas
+//importa√ß√£o de bibliotecas
 #include <stdio.h>
 #include <stdlib.h>
 
-//definiÁ„o de tipos
+//defini√ß√£o de tipos
 typedef struct No{
 	
 	int valor;
@@ -12,7 +12,7 @@ typedef struct No{
 
 typedef TNo* TLista;
 
-//protÛtipo das funÁıes
+//prot√≥tipo das fun√ß√µes
 
 void exibir (TLista L);
 int inserir (TLista* L, int numero);
@@ -25,11 +25,11 @@ TLista buscar (TLista L, int numero);
 
 void main (){
 	
-	//declaraÁ„o de vari·veis
+	//declara√ß√£o de vari√°veis
 	TLista L1 = NULL;
 	int opcao, numero, novoNumero;
 	
-	//while para apresentar as opÁıes para o usu·rio escolher
+	//while para apresentar as op√ß√µes para o usu√°rio escolher
 	do{
 		
 		opcao = menu ();
@@ -72,7 +72,7 @@ void main (){
 					
 					break;
 
-			//removendo determinado numero em dada posiÁ„o
+			//removendo determinado numero em dada posi√ß√£o
 			case 3: exibir (L1);
 			
 					printf ("Digite a posicao que deseja remover: ");
@@ -118,7 +118,7 @@ void main (){
 					}
 					
 					break;
-			//buscando um n˙mero e retornando seu Ìndice
+			//buscando um n√∫mero e retornando seu √≠ndice
 			case 5: exibir (L1);
 			
 					printf ("Digite o numero que deseja buscar: ");
@@ -145,7 +145,7 @@ void main (){
 			
 				    break;
 			
-			//caso o usu·rio digite uma opÁ„o inv·lida
+			//caso o usu√°rio digite uma op√ß√£o inv√°lida
 			default: printf("Digite uma opcao valida.\n\n");
 			
 		}
@@ -156,7 +156,7 @@ void main (){
 		
 }
 
-//implementaÁ„o das funÁıes
+//implementa√ß√£o das fun√ß√µes
 
 int menu (){
 	
@@ -181,10 +181,10 @@ int menu (){
 
 void exibir (TLista L){
 	
-	//declaraÁ„o de vari·veis
+	//declara√ß√£o de vari√°veis
 	TLista aux;
 	
-	//testando se a lista est· vazia
+	//testando se a lista est√° vazia
 	if (L == NULL){
 		
 		printf ("\nLista Vazia!\n\n");
@@ -195,16 +195,16 @@ void exibir (TLista L){
 		
 		printf ("\nLista: ");
 		
-		//inicializando 'aux' de forma que aponte para o primeiro nÛ da lista
+		//inicializando 'aux' de forma que aponte para o primeiro n√≥ da lista
 		aux = L;
 		
-		//percorrendo todos os nÛs da lista
+		//percorrendo todos os n√≥s da lista
 		while (aux != NULL){
 			
 			//exibindo o valor apontado pelo 'aux'
 			printf ("%d ", aux->valor);
 			
-			//andar com o 'aux' de forma que ele aponte para o prÛximo nÛ
+			//andar com o 'aux' de forma que ele aponte para o pr√≥ximo n√≥
 			aux = aux->prox;
 			
 		}
@@ -217,13 +217,13 @@ void exibir (TLista L){
 
 int inserir (TLista *L, int numero){
 	
-	//declaraÁ„o de vari·veis
+	//declara√ß√£o de vari√°veis
 	TLista aux;
 	
-	//alocar memÛria para o novo elemento
+	//alocar mem√≥ria para o novo elemento
 	aux = (TLista) malloc (sizeof(TNo));
 
-	//verificando se a memÛria solicitada n„o foi alocada
+	//verificando se a mem√≥ria solicitada n√£o foi alocada
 	if (aux == NULL){
 		
 		return 0;
@@ -232,10 +232,10 @@ int inserir (TLista *L, int numero){
 	
 	else{
 		
-		//armazenar o novo valor na memÛria recÈm alocada
+		//armazenar o novo valor na mem√≥ria rec√©m alocada
 		aux->valor = numero;
 		
-		//fazer o novo nÛ apontar para o nÛ que, atÈ ent„o, era o primeiro da lista.
+		//fazer o novo n√≥ apontar para o n√≥ que, at√© ent√£o, era o primeiro da lista.
 		aux->prox = *L;
 		//fazer com que o L aponte para o novo elemento
 		*L = aux;
@@ -248,19 +248,19 @@ int inserir (TLista *L, int numero){
 
 int remover (TLista *L, int numero){
 	
-	//declaraÁ„o de vari·veis
+	//declara√ß√£o de vari√°veis
 	TLista aux1, aux2;
 	
-	//removendo ocorrÍncias de 'numero' no inÌcio da lista
+	//removendo ocorr√™ncias de 'numero' no in√≠cio da lista
 	while ((*L != NULL) && ((*L)->valor == numero)){
 		
-		//fazer um auxiliar apontar para o primeiro nÛ
+		//fazer um auxiliar apontar para o primeiro n√≥
 		aux1 = *L;
 		
-		//fazer 'L' apontar para o "2∫" elemento
+		//fazer 'L' apontar para o "2¬∫" elemento
 		*L = aux1->prox;   //ou *L = (*L)->prox;
 		
-		//liberar a memÛria apontada por 'aux1'
+		//liberar a mem√≥ria apontada por 'aux1'
 		free (aux1);
 		
 		return 1;
@@ -269,7 +269,7 @@ int remover (TLista *L, int numero){
 	
 	//verificando se ainda existem elementos na lista
 	if (*L != NULL){
-		//buscar com 'aux1' o elemento a ser removido e garantir que 'aux2' apontar· sempre para o nÛ anterior ao apontado por 'aux1'
+		//buscar com 'aux1' o elemento a ser removido e garantir que 'aux2' apontar√° sempre para o n√≥ anterior ao apontado por 'aux1'
 		
 		//inicializando os ponteiros 'aux1' e 'aux2'
 		aux2 = *L;
@@ -284,17 +284,17 @@ int remover (TLista *L, int numero){
 				//fazer o 'prox' de 'aux2' apontar para o 'prox' do 'aux1'
 				aux2->prox = aux1->prox;
 				
-				//liberar a memÛria apontada por 'aux1'
+				//liberar a mem√≥ria apontada por 'aux1'
 				free (aux1);
 				
-				//fazer com que 'aux1' aponte para o prÛximo elemento da lista (aquele que era pontado pelo nÛ que acabou de ser removido)
+				//fazer com que 'aux1' aponte para o pr√≥ximo elemento da lista (aquele que era pontado pelo n√≥ que acabou de ser removido)
 				aux1 = aux2->prox;
 				
 				return 1;
 				
 			} else {
 				
-				//andando com os auxiliares para os prÛximos nÛs
+				//andando com os auxiliares para os pr√≥ximos n√≥s
 				aux2 = aux1;
 				aux1 = aux1->prox;
 				
@@ -309,20 +309,20 @@ int remover (TLista *L, int numero){
 
 int removerPos (TLista *L, int numero){
 	
-	//declaraÁ„o de vari·veis
+	//declara√ß√£o de vari√°veis
 	TLista aux1, aux2;
 	int cont = 1;
 	
-	//removendo ocorrÍncias no inÌcio da lista
+	//removendo ocorr√™ncias no in√≠cio da lista
 	while ((*L != NULL) && (cont == numero)){
 		
-		//fazer um auxiliar apontar para o primeiro nÛ
+		//fazer um auxiliar apontar para o primeiro n√≥
 		aux1 = *L;
 		
-		//fazer 'L' apontar para o "2∫" elemento
+		//fazer 'L' apontar para o "2¬∫" elemento
 		*L = aux1->prox;
 		
-		//liberar a memÛria apontada por 'aux1'
+		//liberar a mem√≥ria apontada por 'aux1'
 		free (aux1);
 		
 		return 1;
@@ -331,7 +331,7 @@ int removerPos (TLista *L, int numero){
 	
 	//verificando se ainda existem elementos na lista
 	if (*L != NULL){
-		//buscar com 'aux1' o elemento a ser removido e garantir que 'aux2' apontar· sempre para o nÛ anterior ao apontado por 'aux1'
+		//buscar com 'aux1' o elemento a ser removido e garantir que 'aux2' apontar√° sempre para o n√≥ anterior ao apontado por 'aux1'
 		
 		//inicializando os ponteiros 'aux1' e 'aux2'
 		aux2 = *L;
@@ -346,17 +346,17 @@ int removerPos (TLista *L, int numero){
 				//fazer o 'prox' de 'aux2' apontar para o 'prox' do 'aux1'
 				aux2->prox = aux1->prox;
 				
-				//liberar a memÛria apontada por 'aux1'
+				//liberar a mem√≥ria apontada por 'aux1'
 				free (aux1);
 				
-				//fazer com que 'aux1' aponte para o prÛximo elemento da lista (aquele que era pontado pelo nÛ que acabou de ser removido)
+				//fazer com que 'aux1' aponte para o pr√≥ximo elemento da lista (aquele que era pontado pelo n√≥ que acabou de ser removido)
 				aux1 = aux2->prox;
 				
 				return 1;
 				
 			} else {
 				
-				//andando com os auxiliares para os prÛximos nÛs
+				//andando com os auxiliares para os pr√≥ximos n√≥s
 				aux2 = aux1;
 				aux1 = aux1->prox;
 				cont++;
@@ -373,23 +373,23 @@ int removerPos (TLista *L, int numero){
 
 int alterar (TLista *L, int numero, int novoNumero){
 	
-	//declaraÁ„o de vari·veis
+	//declara√ß√£o de vari√°veis
 	TLista aux;
 	
-	//inicializando 'aux' de forma que aponte para o primeiro nÛ da lista
+	//inicializando 'aux' de forma que aponte para o primeiro n√≥ da lista
 	aux = *L;
 	
 	while (aux != NULL){
 		
 		if (aux->valor == numero){
 	
-			//armazenar o novo valor na memÛria
+			//armazenar o novo valor na mem√≥ria
 			aux->valor = novoNumero;
 				
 			return 1;
 		}
 		
-		//andar com o 'aux' de forma que ele aponte para o prÛximo nÛ
+		//andar com o 'aux' de forma que ele aponte para o pr√≥ximo n√≥
 		aux = aux->prox;
 		
 	}
@@ -400,13 +400,13 @@ int alterar (TLista *L, int numero, int novoNumero){
 
 TLista buscar (TLista L, int numero){
 	
-	//declaraÁ„o de vari·veis
+	//declara√ß√£o de vari√°veis
 	TLista aux;
 	
-	//inicializando 'aux' de forma que aponte para o primeiro nÛ da lista
+	//inicializando 'aux' de forma que aponte para o primeiro n√≥ da lista
 	aux = L;
 		
-	//percorrendo todos os nÛs da lista
+	//percorrendo todos os n√≥s da lista
 	while (aux != NULL){
 		
 		//verificando se 'numero' foi encontrado
@@ -416,11 +416,11 @@ TLista buscar (TLista L, int numero){
 			
 		}
 				
-		//andar com o 'aux' de forma que ele aponte para o prÛximo nÛ
+		//andar com o 'aux' de forma que ele aponte para o pr√≥ximo n√≥
 		aux = aux->prox;
 
 	}		
 	
-	//'numero' n„o existe na lista
+	//'numero' n√£o existe na lista
 	return NULL;
 }
